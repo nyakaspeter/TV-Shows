@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>TV Shows</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="my-5 text-center">
+      <div class="container" style="position: relative">
+        <a
+          href="/viewepisode.html"
+          type="button"
+          class="btn btn-primary btn-floating"
+          style="
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            background-color: #db202c;
+          "
+        >
+          <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <a
+          href="/viewshow.html"
+          type="button"
+          class="btn btn-primary btn-floating"
+          style="
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            background-color: #db202c;
+          "
+        >
+          <i class="fas fa-trash-alt"></i>
+        </a>
+
+        <section>
+          <div id="intro" class="text-center rounded mb-4">
+            <img
+              class="mb-4"
+              height="112px"
+              style="max-width: 70%; object-fit: contain"
+              src="https://fontmeme.com/permalink/210305/de40cb1335ccb4c584c180a1179de649.png"
+            />
+          </div>
+        </section>
+
+        <section>
+          <form>
+            <div class="form-outline mb-4">
+              <input
+                type="text"
+                id="form6Example3"
+                class="form-control form-control-lg"
+                value="Uno"
+              />
+              <label class="form-label" for="form6Example3"
+                >Episode title</label
+              >
+            </div>
+
+            <div class="form-outline mb-4">
+              <input
+                type="number"
+                id="form6Example6"
+                class="form-control form-control-lg"
+                value="1"
+              />
+              <label class="form-label" for="form6Example6"
+                >Season number</label
+              >
+            </div>
+
+            <div class="form-outline mb-4">
+              <input
+                type="number"
+                id="form6Example6"
+                class="form-control form-control-lg"
+                value="1"
+              />
+              <label class="form-label" for="form6Example6"
+                >Episode number</label
+              >
+            </div>
+
+            <div class="form-outline mb-4">
+              <input
+                type="text"
+                id="form6Example6"
+                class="form-control form-control-lg"
+                onfocus="(this.type='date')"
+                onblur="if(!this.value)this.type='text'"
+                value="2015-02-08"
+              />
+              <label class="form-label" for="form6Example6">Air date</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input
+                type="url"
+                id="form6Example5"
+                class="form-control form-control-lg"
+                value="https://www.themoviedb.org/t/p/original/waZPu4CdvYH0FJrdmghGeYkQzfM.jpg"
+              />
+              <label class="form-label" for="form6Example5"
+                >Thumbnail link</label
+              >
+            </div>
+
+            <div class="form-outline mb-4">
+              <textarea
+                class="form-control form-control-lg"
+                id="form6Example7"
+                rows="6"
+              >
+Jimmy works his magic in the courtroom. Unexpected inspiration leads him to an unconventional pursuit of potential clients.</textarea
+              >
+              <label class="form-label" for="form6Example7">Synopsis</label>
+            </div>
+
+            <div class="form-check d-flex justify-content-center">
+              <input
+                class="form-check-input me-2"
+                type="checkbox"
+                value=""
+                id="form6Example8"
+                checked
+              />
+              <label class="form-check-label" for="form6Example8">
+                Add to favorites
+              </label>
+            </div>
+          </form>
+
+          <div class="d-flex justify-content-center">
+            <a
+              class="btn btn-lg btn-success rounded-pill mt-5"
+              href="/viewepisode.html"
+              role="button"
+              ><i class="fas fa-save me-2"></i>Save changes</a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+    ></script>
+  </body>
+</html>

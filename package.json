@@ -1,0 +1,14 @@
+{
+  "name": "tvshows",
+  "version": "1.0.0",
+  "description": "TV show collection manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Nyakas Péter",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
