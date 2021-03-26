@@ -5,6 +5,7 @@
 
 module.exports = function (objectRepository) {
   return function (req, res, next) {
+    console.log(req.body);
     next();
   };
 };

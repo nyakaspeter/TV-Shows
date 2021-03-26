@@ -2,6 +2,6 @@
 
 module.exports = function (objectRepository, viewName) {
   return function (req, res, next) {
-    next();
+    res.render(viewName, res.locals);
   };
 };

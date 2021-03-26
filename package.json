@@ -4,11 +4,15 @@
   "description": "TV show collection manager",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "npx nodemon index.js -e ejs,js,css,html,jpg,png"
   },
   "author": "Nyakas Péter",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

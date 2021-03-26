@@ -1,0 +1,40 @@
+<%- include("shared/header") %>
+<%- include("shared/logo", { src: "/episodeinfo.png" }) %>
+<%- include("shared/floatingbutton", { href: "/show/1",  icon: "fas fa-arrow-left", top: "40px", left: "20px" }) %>
+<%- include("shared/floatingbutton", { href: "/show/1/episode/1/edit",  icon: "fas fa-pencil-alt", top: "40px", right: "20px" }) %>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card d-flex flex-column">
+      <img src="https://www.themoviedb.org/t/p/original/waZPu4CdvYH0FJrdmghGeYkQzfM.jpg" class="bg-image"
+        style="object-fit: cover" />
+
+      <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-around">
+        <div class="d-flex flex-column gap-2 align-items-center mt-2">
+          <h6 class="card-text display-6" style="font-size: 1.5rem; word-wrap: break-word">
+            Better Call Saul | S01E01 | 2015.02.08
+          </h6>
+          <div class="d-flex flex-row gap-2 align-items-center">
+            <div>
+              <h5 class="card-text display-5 text-center">Uno</h5>
+            </div>
+
+            <a class="ripple" href="#!">
+              <i class="fas fa-star"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center mx-4">
+          <p>
+            Jimmy works his magic in the courtroom. Unexpected
+            inspiration leads him to an unconventional pursuit of
+            potential clients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("shared/footer") %>
