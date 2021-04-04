@@ -1,12 +1,12 @@
-const render = require("./middlewares/render");
-const getShows = require("./middlewares/show/getShows");
-const getShow = require("./middlewares/show/getShow");
-const saveShow = require("./middlewares/show/saveShow");
-const deleteShow = require("./middlewares/show/deleteShow");
-const getEpisodes = require("./middlewares/episode/getEpisodes");
-const getEpisode = require("./middlewares/episode/getEpisode");
-const saveEpisode = require("./middlewares/episode/saveEpisode");
-const deleteEpisode = require("./middlewares/episode/deleteEpisode");
+const render = require("../middlewares/render");
+const getShows = require("../middlewares/show/getShows");
+const getShow = require("../middlewares/show/getShow");
+const saveShow = require("../middlewares/show/saveShow");
+const deleteShow = require("../middlewares/show/deleteShow");
+const getEpisodes = require("../middlewares/episode/getEpisodes");
+const getEpisode = require("../middlewares/episode/getEpisode");
+const saveEpisode = require("../middlewares/episode/saveEpisode");
+const deleteEpisode = require("../middlewares/episode/deleteEpisode");
 
 module.exports = function (app) {
   const objectRepository = {};
