@@ -1,136 +1,41 @@
 <%- include("shared/header") %>
 <%- include("shared/logo", { src: "/tvshows.png" }) %>
 
-<div class="row justify-content-center mb-4">
-  <div class="col-lg-5 col-9">
-    <div class="input-group rounded">
-      <input type="search" class="form-control rounded-pill p-4" placeholder="Filter shows..." />
+<form method="POST">
+  <div class="row justify-content-center mb-4">
+    <div class="col-lg-5 col-9">
+      <div class="input-group rounded">
+        <input input name="title" id="title" type="search" class="form-control rounded-pill p-4"
+          placeholder="Search shows..." />
+      </div>
     </div>
   </div>
-</div>
+</form>
 
 <div class="row justify-content-center">
+  <% shows.sort((a, b) => a.title.localeCompare(b.title)).forEach(show => { %>
   <div class="col-6 col-md-4 col-lg-3 p-3 d-flex align-items-stretch" style="max-width: 280px">
     <div class="card">
       <div class="bg-image hover-overlay ripple h-100 d-flex" data-mdb-ripple-color="light">
-        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ggFHVNu6YYI5L9pCfOacjizRGt.jpg"
+        <img src="<%= show.poster %>" onerror="this.src = `https://via.placeholder.com/480x800?text=<%= show.title %>`;"
           class="img-fluid h-100" style="object-fit: cover" />
-        <a href="#!">
+        <a href="/show/<%= show._id %>">
           <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
         </a>
       </div>
       <div class="card-body d-flex justify-content-center gap-1 align-items-center">
         <div>
-          <h6 class="card-text">Breaking Bad</h6>
-        </div>
-        <a class="ripple" href="#!">
-          <i class="fas fa-star"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6 col-md-4 col-lg-3 p-3 d-flex align-items-stretch" style="max-width: 280px">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple h-100 d-flex" data-mdb-ripple-color="light">
-        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/cU0kAjGjA6d2XjBzJMUIEVKiGDb.jpg"
-          class="img-fluid h-100" style="object-fit: cover" />
-        <a href="/show/1">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-        </a>
-      </div>
-      <div class="card-body d-flex justify-content-center gap-1 align-items-center">
-        <div>
-          <a href="/show/1">
-            <h6 class="card-text">Better Call Saul</h6>
+          <a href="/show/<%= show._id %>" class="text-reset">
+            <h6 class="card-text"><%= show.title %></h6>
           </a>
         </div>
-        <a class="ripple" href="#!">
-          <i class="fas fa-star"></i>
+        <a href="/show/<%= show._id %>/star" class="ripple">
+          <i style="color: #db202c" class="<%= show.favorite ? "fas" : "far" %> fa-star"></i>
         </a>
       </div>
     </div>
   </div>
-
-  <div class="col-6 col-md-4 col-lg-3 p-3 d-flex align-items-stretch" style="max-width: 280px">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple h-100 d-flex" data-mdb-ripple-color="light">
-        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg"
-          class="img-fluid h-100" style="object-fit: cover" />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-        </a>
-      </div>
-      <div class="card-body d-flex justify-content-center gap-1 align-items-center">
-        <div>
-          <h6 class="card-text">The Mandalorian</h6>
-        </div>
-        <a class="ripple" href="#!">
-          <i class="far fa-star"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6 col-md-4 col-lg-3 p-3 d-flex align-items-stretch" style="max-width: 280px">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple h-100 d-flex" data-mdb-ripple-color="light">
-        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg"
-          class="img-fluid h-100" style="object-fit: cover" />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-        </a>
-      </div>
-      <div class="card-body d-flex justify-content-center gap-1 align-items-center">
-        <div>
-          <h6 class="card-text">Game of Thrones</h6>
-        </div>
-        <a class="ripple" href="#!">
-          <i class="far fa-star"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6 col-md-4 col-lg-3 p-3 d-flex align-items-stretch" style="max-width: 280px">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple h-100 d-flex" data-mdb-ripple-color="light">
-        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/rqeYMLryjcawh2JeRpCVUDXYM5b.jpg"
-          class="img-fluid h-100" style="object-fit: cover" />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-        </a>
-      </div>
-      <div class="card-body d-flex justify-content-center gap-1 align-items-center">
-        <div>
-          <h6 class="card-text">The Walking Dead</h6>
-        </div>
-        <a class="ripple" href="#!">
-          <i class="far fa-star"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6 col-md-4 col-lg-3 p-3 d-flex align-items-stretch" style="max-width: 280px">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple h-100 d-flex" data-mdb-ripple-color="light">
-        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/g3nzhHBDTrJ7RWhzozFTYFjvRbd.jpg"
-          class="img-fluid h-100" style="object-fit: cover" />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-        </a>
-      </div>
-      <div class="card-body d-flex justify-content-center gap-1 align-items-center">
-        <div>
-          <h6 class="card-text">Stranger Things</h6>
-        </div>
-        <a class="ripple" href="#!">
-          <i class="fas fa-star"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+  <% }) %>
 </div>
 
 <div class="fixed-action-btn">

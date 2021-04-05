@@ -9,6 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("static"));
 
 routes(app);
-//seed();
+seed();
 
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));

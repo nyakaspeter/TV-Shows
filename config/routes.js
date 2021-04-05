@@ -2,17 +2,15 @@ const render = require("../middlewares/render");
 const getShows = require("../middlewares/show/getShows");
 const getShow = require("../middlewares/show/getShow");
 const saveShow = require("../middlewares/show/saveShow");
+const starShow = require("../middlewares/show/starShow");
 const deleteShow = require("../middlewares/show/deleteShow");
-const getEpisodes = require("../middlewares/episode/getEpisodes");
 const getEpisode = require("../middlewares/episode/getEpisode");
 const saveEpisode = require("../middlewares/episode/saveEpisode");
+const starEpisode = require("../middlewares/episode/starEpisode");
 const deleteEpisode = require("../middlewares/episode/deleteEpisode");
 
 module.exports = function (app) {
   const objectRepository = {};
-
-  // Get all shows
-  app.get("/", getShows(objectRepository), render(objectRepository, "index"));
 
   // Add a new show
   app.use(
@@ -25,7 +23,6 @@ module.exports = function (app) {
   app.get(
     "/show/:showId",
     getShow(objectRepository),
-    getEpisodes(objectRepository),
     render(objectRepository, "viewshow")
   );
 
@@ -38,10 +35,10 @@ module.exports = function (app) {
   );
 
   // Star/unstar a show (edit only the favorite property)
-  app.post(
+  app.get(
     "/show/:showId/star",
     getShow(objectRepository),
-    saveShow(objectRepository)
+    starShow(objectRepository)
   );
 
   // Delete a show
@@ -77,11 +74,11 @@ module.exports = function (app) {
   );
 
   // Star/unstar an episode of a show (edit only the favorite property)
-  app.post(
+  app.get(
     "/show/:showId/episode/:episodeId/star",
     getShow(objectRepository),
     getEpisode(objectRepository),
-    saveEpisode(objectRepository)
+    starEpisode(objectRepository)
   );
 
   // Delete an episode of a show
@@ -91,4 +88,7 @@ module.exports = function (app) {
     getEpisode(objectRepository),
     deleteEpisode(objectRepository)
   );
+
+  // Get all shows
+  app.use("/", getShows(objectRepository), render(objectRepository, "index"));
 };

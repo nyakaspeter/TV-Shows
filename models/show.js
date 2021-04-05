@@ -2,8 +2,8 @@ const db = require("../config/db");
 const Episode = require("./episode");
 
 const Show = db.model("Show", {
-  title: String,
-  year: Number,
+  title: { type: String, required: true },
+  year: { type: Number, required: true },
   poster: String,
   description: String,
   favorite: Boolean,

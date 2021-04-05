@@ -1,9 +1,14 @@
 // Remove an episode from the database
-//  - If res.locals.episode exists, remove it from the db
+//  - Remove res.locals.episode from the db
 //  - Then redirect to /show/:showId
 
 module.exports = function (objectRepository) {
   return function (req, res, next) {
-    next();
+    res.locals.episode.remove();
+
+    res.locals.show
+      .save()
+      .then(() => res.redirect(`/show/${req.params.showId}`))
+      .catch(() => res.redirect(`/show/${req.params.showId}`));
   };
 };
