@@ -11,6 +11,7 @@ module.exports = function (objectRepository) {
       "title poster favorite"
     ).then((shows) => {
       res.locals.shows = shows;
+      res.locals.title = req.body.title;
       next();
     });
   };
