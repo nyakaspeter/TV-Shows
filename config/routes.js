@@ -10,7 +10,10 @@ const starEpisode = require("../middlewares/episode/starEpisode");
 const deleteEpisode = require("../middlewares/episode/deleteEpisode");
 
 module.exports = function (app) {
-  const objectRepository = {};
+  const objectRepository = {
+    Show: require("../models/show"),
+    Episode: require("../models/episode"),
+  };
 
   // Add a new show
   app.use(

@@ -3,9 +3,11 @@
 //  - If not then save a new entity to the db
 //  - Then redirect to /show/:showId
 
-const Show = require("../../models/show");
+const requireOption = require("../requireOption");
 
 module.exports = function (objectRepository) {
+  const Show = requireOption(objectRepository, "Show");
+
   return function (req, res, next) {
     if (
       typeof req.body.title === "undefined" ||
