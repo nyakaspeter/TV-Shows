@@ -39,6 +39,9 @@ module.exports = function (objectRepository) {
           `/show/${res.locals.show._id}/episode/${res.locals.episode._id}`
         )
       )
-      .catch((error) => res.redirect(`/show/${res.locals.show._id}`));
+      .catch((error) => {
+        console.error(error);
+        res.redirect(`/show/${res.locals.show._id}`);
+      });
   };
 };

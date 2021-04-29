@@ -4,6 +4,12 @@
 
 module.exports = function (objectRepository) {
   return function (req, res, next) {
-    res.locals.show.remove().then(() => res.redirect("/"));
+    res.locals.show
+      .remove()
+      .then(() => res.redirect("/"))
+      .catch((error) => {
+        console.error(error);
+        res.redirect("/");
+      });
   };
 };

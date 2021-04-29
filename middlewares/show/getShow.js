@@ -12,6 +12,7 @@ module.exports = function (objectRepository) {
         next();
       })
       .catch((error) => {
+        console.error(error);
         res.redirect("/");
       });
   };

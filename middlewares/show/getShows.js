@@ -9,10 +9,15 @@ module.exports = function (objectRepository) {
         ? { title: { $regex: req.body.title, $options: "i" } }
         : {},
       "title poster favorite"
-    ).then((shows) => {
-      res.locals.shows = shows;
-      res.locals.title = req.body.title;
-      next();
-    });
+    )
+      .then((shows) => {
+        res.locals.shows = shows;
+        res.locals.title = req.body.title;
+        next();
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(404).end();
+      });
   };
 };

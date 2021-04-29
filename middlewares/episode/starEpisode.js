@@ -9,6 +9,9 @@ module.exports = function (objectRepository) {
     res.locals.show
       .save()
       .then(() => res.redirect("back"))
-      .catch(() => res.redirect("back"));
+      .catch((error) => {
+        console.error(error);
+        res.redirect("back");
+      });
   };
 };

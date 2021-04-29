@@ -1,5 +1,6 @@
 const express = require("express");
 const seed = require("./config/seed");
+const mongoose = require("./config/db");
 const routes = require("./config/routes");
 const app = express();
 
@@ -12,4 +13,6 @@ app.use(express.static("static"));
 routes(app);
 seed();
 
-app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
+mongoose.connection.on("open", () =>
+  app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`))
+);

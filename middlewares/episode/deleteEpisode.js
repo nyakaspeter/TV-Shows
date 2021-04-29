@@ -9,6 +9,9 @@ module.exports = function (objectRepository) {
     res.locals.show
       .save()
       .then(() => res.redirect(`/show/${req.params.showId}`))
-      .catch(() => res.redirect(`/show/${req.params.showId}`));
+      .catch((error) => {
+        console.error(error);
+        res.redirect(`/show/${req.params.showId}`);
+      });
   };
 };
